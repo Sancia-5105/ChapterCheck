@@ -8,6 +8,9 @@ app = FastAPI(title="Examate RAG starter", version="0.1.0")
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]
 
+@app.get("/hello")
+def say_hello():
+    return "hello"
 
 @app.get("/health")
 def health(settings: SettingsDep) -> dict:
